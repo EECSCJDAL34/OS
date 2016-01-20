@@ -1,0 +1,315 @@
+\documentclass[11pt]{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{layouts}
+\usepackage{subfig}
+\usepackage[top = 1in, bottom = 1in,
+left = 1in, right = 1in]{geometry}
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+\usepackage{listings} 
+\setlength{\intextsep}{0mm}            % Include the listings-package
+\usepackage{fancyvrb} % for simple solution
+\usepackage{longtable}
+\usepackage{grffile}
+\usepackage{multicol}
+\usepackage{titling}
+\usepackage{url}
+
+
+\begin{document}
+
+\setlength{\droptitle}{-3cm}
+\title{\textbf{EECS 3221: UBUNTU Operating System Report}}
+\author{\textbf{Dinesh Kalia}\\ (213273420 - dinesh49) \\
+\& \\
+\textbf{Camillo John (CJ) D'Alimonte}\\ (212754396 - cjdal34) \\
+\& \\
+\textbf{Alistair Scheuhammer}\\ (213043609 - siggy) \\
+\& \\
+\textbf{Ben Zhou}\\ (213383823 - bozon92)}
+\date {\textbf{December 7, 2015}}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction to the Ubuntu Operating System}
+
+\forceindent Ubuntu is a open-source operating system developed through a worldwide community of software programmers. As a Debian-based Linux distribution, Ubuntu has emerged as an industry workhorse built on a reputation for stability and reliability.  Commercially sponsored by \emph{Canonical Limited}, the Ubuntu project is committed to the core principles of open-source software development which emphasize the continually release of improved variations of software with the offering of long-term support services to encourage the participation of the broader community [15]. Since its inception, Ubuntu has been widely used in both the private and public sectors and has emerged as one of the most popular Linux distributions for personal use.
+
+\section{Origins and History}
+
+\forceindent The word \emph{Ubuntu} is an ancient African (Zulu and Xhosa) word which means ``humanity to others". It can also be interpreted as the phrase ``I am what I am because of who we all are". The word \emph{Ubuntu} was selected as it shares the sentiments that describe not only the Ubuntu project but the entire belief that community driven open-source software helps drive society's innovation through technological improvement [15].\\
+
+In 2004, South African internet mogul Mark Shuttleworth formed \emph{Canonical Limited}, an organization created to provide support and financial backing for various open-source software projects. Shuttleworth, who made his fortune by selling his company \emph{Thawte}, a certificate authority firm, to \emph{VeriSign} for over \$500 million, decided to develop a new, more user-friendly Linux distribution based on the Debian platform [15].\\
+
+Since its inception, a new version of Ubuntu has been released to users every 6 months. As of November 2015, a grand total of 23 stable releases has been delivered. Every fourth release, issued on a two-year basis, receives long-term support (LTS) which includes updates for new hardware, security patches and updates to the cloud computing infrastructure [14]. Each release of Ubuntu has a specific code name which are made using an adjective and an animal with the same first letter such as \emph{Hardy Heron} or \emph{Feisty Fawn} [14]. The current version of Ubuntu is 15.10 \emph{Wily Werewolf}. \\
+
+Table 1 provides a brief overview of each of the released versions of Ubuntu since its inception. The next variation of Ubuntu (16.04) will be called \emph{Xenial Xerus} and will be offered with long-term support for users. It is scheduled for release on April 21, 2016. 
+
+\begin{center}
+\begin{longtable}{|c|c|c|c|}
+\caption{Ubuntu's 23 Releases to Date [14]}\\
+\hline
+\textbf{Version} & \textbf{Name} & \textbf{Year} & \textbf{Features} \\ \hline
+4.10 & Warty Warthog & 2004 & \begin{tabular}[c]{@{}c@{}}First Version of Ubuntu\\ GNOME 2.8 Desktop\\ Firefox 0.9\\ Free CD Copies Were Available\end{tabular} \\ \hline
+5.04 & Hoary Hedgehog & 2005 & \begin{tabular}[c]{@{}c@{}}Update Manager Tool Introduced\\ Suspend \& Hibernate Support\\ Dynamic CPU Frequency Scaling\\ Supported USB Device Install\end{tabular} \\ \hline
+5.10 & Breezy Badger & 2005 & \begin{tabular}[c]{@{}c@{}}First Release with Graphical Bootscreen\\ Simple Add/Remove Software Tool\\ Serpentine CD Burner App\\ Ubuntu Logo Added to Menu\end{tabular} \\ \hline
+6.06 & Dapper Drake (LTS) & 2006 & \begin{tabular}[c]{@{}c@{}}Network Manager for Wifi\\ Revamped Theme\\ GUI Ubuntu Installer\\ Merged Live and Install CDs\end{tabular} \\ \hline
+6.10 & Edgy Eft & 2006 & \begin{tabular}[c]{@{}c@{}}Added Tomboy and F-Spot\\ Debut of Ubuntu Login Sounds\\ Firefox 2.0 included\\ Upstart Shipped by Default\end{tabular} \\ \hline
+7.04 & Feisty Fawn & 2007 & \begin{tabular}[c]{@{}c@{}}Provided Windows Migration Assistant\\ Compiz Effects Support\\ Easy Install of Restricted Drivers/Codecs\\ WPA Wifi Network Support\end{tabular} \\ \hline
+7.10 & Gutsy Gibbon & 2007 & \begin{tabular}[c]{@{}c@{}}NTFS Support (read/write)\\ Fast User Switching\\ Compiz Made Default\\ Gaim Updated to Pidgin\end{tabular} \\ \hline
+8.04 & Hardy Heron (LTS) & 2008 & \begin{tabular}[c]{@{}c@{}}Pulse Audio Introduced\\ Transmission and Brasero Apps Added\\ WUBI Added to Live CD\\ Netbook Remix Interface Introduced\end{tabular} \\ \hline
+8.10 & Intrepid Ibex & 2008 & \begin{tabular}[c]{@{}c@{}}Live USB Creation Tool\\ Dynamic Kernel Module Support\\ First Release to Ship With "Guest Account"\\ Mobile Internet Connection Wizard\end{tabular} \\ \hline
+9.04 & Jaunty Jackalope & 2009 & \begin{tabular}[c]{@{}c@{}}Much Improved Boot Time\\ Notify OSD Introduced\\ New Boot and Login Screens\\ Wacom Tablet Support\end{tabular} \\ \hline
+9.10 & Karmic Koala & 2009 & \begin{tabular}[c]{@{}c@{}}EXT4 Made Default Filesystem\\ Pidgin Replaced With Empathy\\ Separate Netbook Edition\\ Ubuntu One Included By Default\\ Ubuntu Software Center\end{tabular} \\ \hline
+10.04 & Lucid Lynx (LTS) & 2010 & \begin{tabular}[c]{@{}c@{}}Complete Visual Overhaul\\ Shipped With Plymouth\\ Social "Me Menu" Debuts\\ Windows Controls Moved To The Left\end{tabular} \\ \hline
+10.10 & Maverick Meerkat & 2010 & \begin{tabular}[c]{@{}c@{}}Unity Introduced in Netbook Edition\\ "Ubuntu" Font Made Default\\ Shotwell Replaced F-Spot\\ Codec Checkbox Added To Installer\end{tabular} \\ \hline
+11.04 & Natty Narwhal & 2011 & \begin{tabular}[c]{@{}c@{}}Unity Made Default Desktop UI\\ Netbook Edition Discontinued\\ Banshee Made Default Music App\\ Introduced Overlay Scrollbars\end{tabular} \\ \hline
+11.10 & Oneiric Ocelot & 2011 & \begin{tabular}[c]{@{}c@{}}Unity 2D Introduced\\ Thunderbird Replaced Evolution\\ Global Menu and Window Control Set to Hide\\ LightDM Login Screen Debuts\end{tabular} \\ \hline
+12.04 & Precise Pangolin (LTS) & 2012 & \begin{tabular}[c]{@{}c@{}}Rhythmbox Re-Added\\ "HUD" Introduced to Desktop\\ Chamelionic Theming\\ Improved Multi-Monitor Support\end{tabular} \\ \hline
+12.10 & Quantal Quetzal & 2012 & \begin{tabular}[c]{@{}c@{}}Unity 2D Retired\\ Amazon Suggestions in Dash\\ Innovative Web App Integration\\ .ISO Image now larger than standard CD\end{tabular} \\ \hline
+13.04 & Raring Ringtail & 2013 & \begin{tabular}[c]{@{}c@{}}Improved Privacy Features\\ New-Look Session Exit Menus\\ Ubuntu One Sync Menu\\ Improved Interface Animations\end{tabular} \\ \hline
+13.10 & Saucy Salamander & 2013 & \begin{tabular}[c]{@{}c@{}}Faster Unity Performance\\ "Smart Scopes"\\ Ubuntu for Phones 1.0\\ 64bit Becomes Recommended Download\end{tabular} \\ \hline
+14.04 & Trusty Tahr (LTS) & 2014 & \begin{tabular}[c]{@{}c@{}}GNOME Control Center\\ GNOME 3.10\\ SSD TRIM Support\\ Redesigned Start-Up Disk Creator\end{tabular} \\ \hline
+14.10 & Utopic Unicorn & 2014 & \begin{tabular}[c]{@{}c@{}}Minor Improvements to Unity Desktop\\ Kernel Updated to 3.16\\ Full Kernel Address Space Layout Randomization\end{tabular} \\ \hline
+15.04 & Vivid Vervet & 2015 & \begin{tabular}[c]{@{}c@{}}Used Systemd Instead of Upstart by Default\\ Improvement in Intel Haswell Graphics\\ Locally Integrated Menus\end{tabular} \\ \hline
+15.10 & Wily Werewolf & 2015 & \begin{tabular}[c]{@{}c@{}}Ubuntu OpenStack Cloud Development\\ GNOME Scrollbars\end{tabular} \\ \hline
+\end{longtable}
+\end{center}
+\vspace{-10mm}
+\section{Architecture and System Design}
+\subsection{Monolithic Kernel}
+\forceindent Ubuntu, like many Linux distributions, utilizes a monolithic kernel. A monolithic kernel is a specific type of kernel where all services (file system, VFS, device drivers, etc) as well as core functionality (scheduling, memory allocation, etc.) are shared in the same space [12]. Using a monolithic kernel reduces the amount of context switches and messaging involved. However, on the downside, the amount of code running in the kernel space makes the kernel more prone to fatal bugs in comparison to a microkernel. Figure 1, as shown below, depicts the basic structure of a monolithic kernel.
+
+\begin{figure}[h!]
+  \centering
+    \caption{The Structure of a Monolithic Kernel [12]}
+{\includegraphics[width = 4in]{monolythickernel.jpg}}
+\end{figure}
+\subsection{Booting Process}
+\forceindent The booting process of the Ubuntu operating system is not unlike other Linux distributions. It consists of 4 unique phases: BIOS phase, the Boot Loader phase, the Kernel phase, and the Upstart (System start-up) phase. The following list provides a basic description of each of the phases of the booting process [2].
+\begin{enumerate}
+\item BIOS: When the computer first begins execution, it starts by executing the BIOS which is normally stored in a permanent form of memory, such as the ROM. This BIOS code must initialize the hardware other than the CPU, and obtain the code for the next phase, the boot loader. 
+\item Boot Loader: The boot loader is stored in the first sector of a hard disk, the Master Boot Record, or MBR. In Ubuntu's case, the bootloader is the GRand Unified Bootloader or GRUB for short. The main function of the boot loader is to begin the next phase which includes the loading of the kernel and an initial ram disk filesystem.
+\item Kernel: As the core of the operating system, the kernel provides access to hardware and other services. The bootloader begins the process of starting the kernel.
+\item System Startup: Once the kernel is up and running, the remainder of the operating system is brought online as the root partition and file system are located. 
+\end{enumerate}
+\subsection{Unity}
+\forceindent Unity is an ultra powerful desktop and netbook environment that brings consistency and elegance to the Ubuntu experience. Unity provides users with simple and effective indicators that can used to integrate quick access to application features such as power, sound, messaging, and the current session right inside the desktop [1].
+
+\subsection{Flavours}
+\forceindent Aside from the traditional Ubuntu core, \emph{Canonical} funds numerous specialized variants of Ubuntu. Such ``flavours" of Ubuntu are designed to address the different needs of different organizations. A non-exhaustive list of some of the more popular lists is included below [13].
+\begin{itemize}
+\item Edubuntu --- Ubuntu for education
+\item Ubuntu GNOME --- Ubuntu with the GNOME desktop environment
+\item Kubuntu --- Ubuntu with the K Desktop environment
+\item Ubuntu Kylin --- Ubuntu localized for China
+\item Lubuntu --- Ubuntu that uses LXDE
+\item Mythbuntu --- Designed for creating a home theatre PC with MythTV
+\item Ubuntu Studio --- Designed for multimedia editing and creation
+\item Xubuntu --- Ubuntu with the XFCE desktop environment
+\item Ubuntu MATE --- Ubuntu with the MATE desktop environment
+\end{itemize}
+\subsection{Installation Requirements}
+The minimum requirements to run the current release of Ubuntu are as follows [10]:
+\begin{itemize}
+\item 700 MHz processor (about an Intel Celeron or better) 
+\item 512 MiB RAM (system memory) 
+\item 5 GB of hard-drive space
+\item VGA capable of at least 1024x768 resolution 
+\item Either a CD/DVD drive or a USB port for the installer media
+\end{itemize}
+\section{Advantages and Disadvantages}
+\subsection{Advantages}
+\forceindent Ubuntu has a large assortment of features that make it significantly attractive to users looking for a different computing experience. The following list details some of the key advantages Ubuntu holds over the competition [11].
+\begin{itemize}
+\item Innovation Driven and User-Friendly Layout: The innovative performance of Ubuntu is extremely high. Since Ubuntu is open source, improved variations are more readily available to the general public in a much shorter time period. These innovations have allowed Ubuntu to become a very user-friendly alternative to traditional operating systems. New versions of Ubuntu often consist of vastly improved apps, additional system features and softwares, fonts, backgrounds, themes and more. If one were to consider Windows XP, it would become glaring obvious that Windows fails to innovate as quickly as Ubuntu. New versions or even small software patches and upgrades often take numerous years to release and are often inefficient in fixing known problems with the operating system. Ubuntu evolves at an unprecedented level. It is also worth mentioning the user-friendly layout utilized by Unity/HUD. Graphics and in particular fonts, are rendered at a far greater quality than traditional operating systems due to the immense number of patches available to suit the needs of the users.
+\item Compatibility: For users who are used to operating in traditional environments such as Windows or Mac OS, various emulators such as WINE or Crossover are available to run Windows-based applications on Ubuntu. By using an emulator, users will be able to get a similar experience as if they were running the application on a traditional operating system.
+\item Centralized Software Repository: The Ubuntu Software Center allows its users to download and install various applications without the hassle of opening online based repositories every time. By using a centralized, offline center, adding new repositories for software can be done through one location.
+\item Resource Usage: Ubuntu consumes far less hardware resources and thus operates at a faster rate than that of traditional systems. Ubuntu makes for a comfortable alternative for reviving older systems which may not be able to cope with the requirements that traditional operating systems place on it.
+\item Runs Without Installation: For testing, Ubuntu can be run from a DVD or a USB Drive where it can act as a portable operating system to be used on devices for which the security status of the computer is unknown. 
+
+\end{itemize}
+\subsection{Disadvantages}
+\forceindent Although Ubuntu has a large array of advantages that separate it from the competition, it is not without it's negative features. The following list details some of the key disadvantages with the Ubuntu operating system [11].
+\begin{itemize}
+\item Gaming Capabilities: Traditional operating systems such as Windows and Mac have a substantial advantage over Ubuntu when it comes to the ability to play highly animated and graphic dependent computer games. It is extremely difficult and at times impossible to play many modern games on Ubuntu. Despite the use of emulators such as WINE, games running on Ubuntu struggle with relatively poor graphics. Although third-party applications can be installed in an attempt to correct, or at the very least, improve these conditions, it is often not worth the inconvenience. One would not consider using Ubuntu if the objective was to build a personal computer with a focus on game playing. 
+\item Limited Default Packages: Although Ubuntu offers a wide range of free applications for download through its Software Center, it is often difficult to find substitutes for specific applications one wishes to use. There lacks a Linux-based substitute for every Windows or Mac application one desires. Not only is the additional downloading and installing often an inconvenience, the substitute software is rarely seen as a viable alternative. Often, the Ubuntu equivalent will lack equal functionality or fail to provide the same quality product to that of its counterparts. For example, WinFF is a popular video converter installed through the Ubuntu Software Center. Although similar in functionality, it often takes an exponential amount of time to convert large videos in comparison to its Windows and Mac based video converters.
+\item MP3 Files: With the predominate use of MP3 files for storing multimedia, it is inconceivable to believe the Ubuntu does not allow its users to interact with such files. Ubuntu, by default, will not play MP3 files. On the contrary, Windows and other traditional operating systems do not require the installation of additional codecs.
+\item Minimal Support through Hardware Vendors and Online Communities:  There is a lack of any substantial support for Ubuntu users online as the Ubuntu Forum Community is often inadequate in providing users with valuable responses in an appropriate amount of time. As if often the case, weeks go by without the user receiving support for any problems or concerns encountered. There is also a considerable lack of support from hardware vendors. As Ubuntu is not pre-installed, many struggle with the installation process as hardware is often inadequate in providing the required settings for installation. Users must be diligent when considering upgrading their hardware infrastructure while running Ubuntu.
+\end{itemize}
+\subsection{Future Innovations}
+\forceindent The continued development of \emph{Snappy Ubuntu} signals a new, transactionally updated version of the operating system for clouds and devices. \emph{Snappy Ubuntu} is the latest rendition of the traditional Ubuntu core in which applications are provided through a simpler mechanism while consisting of a minimal server image with the same libraries as before [8]. As a faster alternative, \emph{Snappy} applications can be upgraded atomically and rolled back if needed, thus creating a bulletproof approach that is perfect for deployments where predictability and reliability are paramount. \emph{Snappy} applications are confined by \emph{Canonical's} AppArmor kernel security system, which delivers rigorous MAC-based isolation and human-friendly security profiles [8]. Applications are completely isolated from one another, thus making it much safer to install applications from a wide range of sources. \emph{Snappy} applications can also deliver much more reliable updates, meaning users can update their servers on the cloud faster and more confidently, fixing security problems automatically.\\
+
+Figure 2, as shown below, outlines the structure of how \emph{Snappy} operates.
+All of the application software sits on top of the operating system base. These applications are considered as ``application snaps" which complement the basic kernel, gadget and operating system snaps. Application snaps are divided into two distinct categories: framework or application. The basic difference is that a framework can be used to extend the system and mediate access to shared resources, whereas an application is just an end piece of software providing confined services that no other snaps applications can depend on [8] All snaps are self-contained, protected and isolated pieces of code that perform a well-defined set of functions.\\
+
+
+\begin{figure}[h!]
+  \centering
+    \caption{The structure of \emph{Snappy} [8]}
+{\includegraphics[width = 3.5in]{SnappyStructure.png}}
+\end{figure}
+
+
+
+\section{Software Development Environment}
+\forceindent Whether the user is a mobile app developer, an engineering manager or a financial analyst with large-scale models to run, Ubuntu has emerged as the quintessential operating system for developing software applications. As an ideal operating system for any resource-intensive environment, from data mining to large-scale financial modelling, Ubuntu provides its users with the broadest selection of development tools and libraries on the market [9]. As shown in Figure 3, Ubuntu has emerged as the most popular Linux distribution for software development today. \\
+
+\begin{figure}[h!]
+  \centering
+    \caption{Popularity among Linux-based Operating Systems [9]}
+{\includegraphics[width = 4in]{developgraph.png}}
+\end{figure}
+\vspace{1cm}
+
+With Ubunu's development of \emph{Juju}, the deployment process becomes quicker and simpler. \emph{Juju} allows programmers to take an application developed on the desktop and run it on a server or in the cloud with relative ease [9]. As a service orchestration tool, it simplifies the often-inconvenient handover between development and operations. Whether the user programs in Python, Ruby, Node.js, C or Java, an appropriate integrated development environment is available through the Ubuntu Software Center. Figure 4, as shown below, depicts numerous widely used IDEs in the Ubuntu environment. \\
+ 
+\begin{figure}[h!]
+\centering
+\subfloat[Eclipse IDE]{\includegraphics[height=6cm,width = 3in]{Eclipse.jpg}}
+    \hspace{1cm}
+\subfloat[Geany IDE]{\includegraphics[height=6cm, width = 3in]{Geany.jpg}}
+\vspace{1cm}
+\subfloat[Netbeans IDE]{\includegraphics[height=6cm,width = 3in]{Netbeans.png}}
+    \hspace{1cm}
+\subfloat[Qt Creator IDE]{\includegraphics[height=6cm, width = 3in]{QtCreator02.png}}
+\caption{}
+\end{figure}
+
+\section{Industrial \& Commercial Applications}
+\forceindent Ubuntu is extensively used by industrial leaders throughout the world. With it's recognized high level of security initiatives, Ubuntu has become widely used as both a desktop and server based operating system throughout government and educational institutions around the globe. The following lists demonstrates the numerous organizations that utilize Ubuntu in various capacities [6---7]. 
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item Oxford University, United Kingdom
+    \item Harvard University, Massachusetts
+    \item John Hopkins University, Baltimore
+    \item Oakland University, Michigan
+    \item Minuto de Dios, Colombia
+    \item University of Delhi, India
+    \item Sungai Renggam Tamil, Malaysia
+    \item Conectar Igualdad, Argentina
+\end{itemize}
+\end{multicols}
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item Ministry of Education, Greece
+    \item Andalusia Government, Spain
+    \item Brazilian Armed Forces, Brazil
+    \item Gauteng Government, South Africa
+    \item Ministry of Education, Romania
+    \item Punjab Government, Pakistan
+    \item Assam Government, India
+    \item Ministry of Education, Macedonia
+\end{itemize}
+\end{multicols}
+
+Many Fortune 500 companies use Ubuntu in varying capacities. Such examples include Google, Amazon, Microsoft, IBM, Dell, Cisco, Qualcomm, and Bloomberg. Google uses a variation of Ubuntu called Goobuntu. Goobuntu is internally used by almost 10,000 of Google's employees on a daily basis. Other than a number of specifically developed packages for in-house use and some increased security features, Goobuntu is in essence a ``light-skin" over the traditional Ubuntu core.
+
+\section{Market Share}
+\subsection{General Desktop Market Share}
+
+\forceindent Since Ubuntu is not purchased in the traditional sense, it is often difficult to analyze its market share, especially in regards to personal desktop use as there is no accurate way to record the number of installations. According to Figure 5, Linux operating systems, regardless of the type of distribution, account for almost 2\% of the total operating system market. This data is derived by aggregating the traffic across the network of websites that use the services provided by \emph{NETMARKETSHARE}. The data however only reports the market share of the operating systems used for browsing and not the specific operating system used by the server.\\
+
+\begin{figure}[h!]
+  \centering
+    \caption{Desktop Market Share, June 2015 [4]}
+{\includegraphics[width = 4in]{MarketShare.png}}
+\end{figure}
+
+\subsection{Usage Trends and Statistics via W3COOK}
+
+
+\forceindent In order to obtain a more realistic idea of how many individuals or institutions do in fact use Ubuntu, one must consider that Ubuntu is predominately used as a web server operating system. By using web analytics, a more practical conclusion as to the wide spread use of Ubuntu can be drawn. W3COOK is a web analytics and market share company based in Seattle, Washington that gathers information from several disparate sources by crawling websites once a month and processing information such as its HTTP header and DNS records. Below are a series of figures outlining the widespread use of Ubuntu in November 2015.
+
+\subsubsection{Monthly Usage}
+
+\forceindent Figure 6, as shown below, depicts the overall usage of Ubuntu as a web server operating system from the beginning of 2013 through to November 2015 in two month intervals [5].\\
+
+\begin{figure}[h!]
+  \centering
+    \caption{Ubuntu Market Share (2013-2015) [5]}
+{\includegraphics[width = 3in]{Usage Trends.png}}
+\end{figure}
+
+\subsubsection{Commenced Usage}
+
+\forceindent Figure 7, as shown below, lists the 18 different domain names that had begun to use Ubuntu as its web server operating system in the month of November. The domains were either using an unspecified technology or another Linux distribution in October. The reasoning behind the decision to switch to Ubuntu is not included in the statistics, however, the flexibility and support networks included with the use of Ubuntu are enticing factors to make such a switch [5].\\
+
+\begin{figure}[h!]
+  \centering
+    \caption{Began Use of Ubuntu (November 2015) [5]}
+{\includegraphics[width = 3in]{Start Using This Month.png}}
+\end{figure}
+
+\subsubsection{Discontinued Usage}
+
+\forceindent Figure 8, as shown below, lists the 11 different domain names that terminated their use of Ubuntu in November. The domains were using Ubuntu as of October and had switched to a different, unspecified technology or another Linux distribution. No reasoning was provided for such moves [5].\\
+
+\begin{figure}[h!]
+  \centering
+    \caption{Terminated Use of Ubuntu (November 2015) [5]}
+{\includegraphics[width = 3in]{StoppedUsing.png}}
+\end{figure}
+
+\subsubsection{Operating System Market Share (November 2015)}
+
+\forceindent Figure 9, as shown below, shows that Ubuntu had a 17.31\% increase in market share in the month of November according to the statistics obtained by W3COOK. Ubuntu is the second most common choice between open-source options behind only Linux. Although Window's market share had increased, it is abundantly clear that institutions are favouring the use of open-source operating systems for their web servers because of their increased reliability, stability, and flexibility [5].\\
+
+\begin{figure}[h!]
+  \centering
+    \caption{Net Change in OS Market Share (November 2015) [5]}
+{\includegraphics[width = 3in]{OS Market Share.png}}
+\end{figure}
+
+\subsection{Usage Trends and Statistics via W3TECHS}
+
+\forceindent Similar to W3COOK, W3TECHS uses their own variation of a web analyzer to collect data on the technologies used to host specific domains. According to WETECHS, their analyzer uses the following pieces of information to assist in their collection of data [4].
+\begin{itemize}
+\item HTML elements of web pages
+\item Specific HTML tags, for example the generator meta tag
+\item JavaScript code
+\item CSS code
+\item The URL structure of a site
+\item Offsite links
+\item HTTP headers, for example cookies
+\item HTTP responses to specific requests, for example compression 
+\end{itemize}
+
+As expected, discrepancies are present between the two analyses. According to W3TECHS, of all the open-source operating systems used, roughly two thirds are Unix. Linux, a variant of Unix, makes up the remaining technologies used. Furthermore, Ubuntu usage makes up for just over 30\% of Linux-based distributions, the second highest total behind only Debian. Although both W3COOK and W3TECHS value Ubuntu's usage at around the same percentile (24.97\% to 30.3\%), the discrepancy in the usage of Debian is astonishing (11.33\% to 31.7\%) [4---5]. This further emphasizes the difficulties faced in trying to obtain an accurate reading on the usage of different operating systems. Figure 10, as shown below, depicts the values obtained by W3TECHS in the month of November [4].\\ 
+
+\begin{figure}[h!]
+  \centering
+    \caption{Open Source OS Market Share (November 2015) [4]}
+{\includegraphics[width = 3in]{UsageStats.png}}
+\end{figure}    
+
+\subsection{Page Hit Ranking via DistroWatch}
+
+\forceindent The statistics provided by the DistroWatch Page Hit Ranking are a ``light-hearted" and unofficial way of measuring the popularity of a series of Linux distributions and other free open-source operating systems by the number of visitors on the website. Although it does not directly correlate neither to usage nor to quality, it provides a rough interpretation of the reputation of numerous systems. As shown in Figure 11, Ubuntu has consistently been amongst the most popular distributions used by visitors of the website [3]. \\
+ 
+\begin{figure}[h!]
+  \centering
+    \caption{Page Hit Ranking over the Specified Time Periods [3]}
+{\includegraphics[width = 6.5in]{DistroWatch.png}}
+\end{figure} 
+
+\section{Conclusion}
+\forceindent Ubuntu has emerged as a reliable and stable open-source operating system that rivals the traditional competitors. With its user-friendly layout and embedded Software Center, users are drawn to the innovative capabilities of Ubuntu. With a substantial and ever increasing market share, Ubuntu will continue to evolve into an industry powerhouse, driven by the knowledge and ideas of a dedicated community of passionate developers.  
+ 
+\newpage 
+\section{References}
+\vspace{0.2cm}
+\begingroup
+\renewcommand{\section}[2]{}%
+\nocite{*}
+\begin{figure}[h!]
+  \centering
+{\includegraphics[width = 6.5in]{References.png}}
+\end{figure}
+\endgroup
+
+\end{document}
